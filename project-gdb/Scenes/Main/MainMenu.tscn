@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhhnm2b03grgt"]
+
+[ext_resource type="Script" uid="uid://c7wu3y3bwc0qw" path="res://Scripts/Gameplay/MainMenu.gd" id="1_y5k35"]
+[ext_resource type="FontFile" uid="uid://chabt3vwrcv7k" path="res://Misc/Fonts/MedodicaRegular.otf" id="3_lq24o"]
+
+[sub_resource type="Theme" id="Theme_y5k35"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y5k35")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 417.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/PanelContainer"]
+layout_mode = 2
+
+[node name="ContinueGame" type="Button" parent="Panel/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_y5k35")
+theme_override_colors/font_hover_color = Color(1, 0.5710682, 0.50889325, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.57254905, 0.50980395, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lq24o")
+theme_override_font_sizes/font_size = 45
+text = "Continue
+"
+
+[node name="Selection" type="Button" parent="Panel/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_y5k35")
+theme_override_colors/font_hover_color = Color(1, 0.5710682, 0.50889325, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.57254905, 0.50980395, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lq24o")
+theme_override_font_sizes/font_size = 45
+text = "Level Select"
+
+[node name="Settings" type="Button" parent="Panel/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_y5k35")
+theme_override_colors/font_hover_color = Color(1, 0.5710682, 0.50889325, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.57254905, 0.50980395, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lq24o")
+theme_override_font_sizes/font_size = 45
+text = "Settings
+"
+
+[node name="Extras" type="Button" parent="Panel/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_y5k35")
+theme_override_colors/font_hover_color = Color(1, 0.5710682, 0.50889325, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.57254905, 0.50980395, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lq24o")
+theme_override_font_sizes/font_size = 45
+text = "Extras"
+
+[node name="ExitGame" type="Button" parent="Panel/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_y5k35")
+theme_override_colors/font_hover_color = Color(1, 0.5710682, 0.50889325, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.57254905, 0.50980395, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_lq24o")
+theme_override_font_sizes/font_size = 45
+text = "Exit Game"
+
+[connection signal="pressed" from="Panel/PanelContainer/VBoxContainer/ContinueGame" to="." method="_on_continue_game_pressed"]
+[connection signal="pressed" from="Panel/PanelContainer/VBoxContainer/Selection" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Panel/PanelContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Panel/PanelContainer/VBoxContainer/Extras" to="." method="_on_extras_pressed"]
+[connection signal="pressed" from="Panel/PanelContainer/VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]
